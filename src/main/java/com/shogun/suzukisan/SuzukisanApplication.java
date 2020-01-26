@@ -119,6 +119,9 @@ public class SuzukisanApplication {
     public CommandLineRunner addMentorGenre(UserService userService, GenreService genreService, MentorService mentorService, MentorGenreService mentorGenreService) {
         return (args) -> {
             // CREATE USER
+            User user = userService.create(new User("user1", "user1@example.com", "password"));
+            User user2 = userService.create(new User("user2", "user2@example.com", "password"));
+
             User test1User = userService.create(new User("MentorGenreTest1", "mentorGenreTest1@example.com", "hashedPass"));
             User test2User = userService.create(new User("MentorGenreTest2", "mentorGenreTest2@example.com", "hashedPass"));
             User test3User = userService.create(new User("MentorGenreTest3", "mentorGenreTest3@example.com", "hashedPass"));
